@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SVG Factory
 
-## Getting Started
+[English](README.md) | [中文](README.zh.md)
+# SVG Factory
 
-First, run the development server:
+SVG Factory is a completely free tool designed to help users easily compress SVG files. Our goal is to make SVG compression simple, fast, and efficient. Whether you are a designer, developer, or anyone who needs to handle SVG files, SVG Factory can assist you.
+
+## About the Author
+
+This website was developed by [Viggo](https://x.com/decohack), who is not a professional developer but managed to create this tool with the help of AI. The entire project was developed using [Cursor](https://www.cursor.so/) and designed in [Figma](https://www.figma.com/). It took approximately 3 hours to complete.
+
+## Features
+
+- **Batch Optimization**: Optimize multiple SVG files at once.
+- **Paste Optimization**: Support for optimizing SVG content pasted from the clipboard.
+- **Download Optimized Results**: Optimized SVG files can be downloaded individually or as a package.
+- **Real-time Feedback**: Provides a comparison of file sizes before and after optimization and the optimization percentage.
+
+## Installation and Running
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ViggoZ/svg-factory.git
+cd svg-factory
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. 构建生产版本
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Main Components
 
-## Learn More
+### `src/app/page.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+The main page component, responsible for managing file upload, optimization, and download processes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `src/components/DropZone.tsx`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+File upload area component, supporting drag-and-drop and paste operations.
 
-## Deploy on Vercel
+### `src/components/FileList.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Component displaying the list of uploaded files.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### `src/components/OptimizedSVGs.tsx`
+
+Component displaying the list of optimized SVG files, providing download and copy functions.
+
+### `src/components/HeaderNav.tsx`
+
+Navigation bar component, containing the project name and navigation links.
+
+### `src/components/ErrorAlert.tsx`
+
+Error alert component, used to display error messages.
+
+## Dependencies
+
+- **React**: For building the user interface.
+- **Next.js**: For building server-rendered React applications.
+- **SVGO**: For optimizing SVG files.
+- **react-dropzone**: For handling file drag-and-drop operations.
+- **react-confetti**: For displaying confetti effects after successful optimization.
+
+## Contributing
+
+Issues and pull requests are welcome. Please ensure to run `npm run lint` and `npm run test` before submitting your code.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Contact Me
+
+If you have any questions or feedback, feel free to contact me via:
+
+- Email: [viggo.zw@gmail.com](mailto:viggo.zw@gmail.com)
+- Twitter: [@decohack](https://x.com/decohack)
+- Support Me: [Buy Me a Coffee](https://buymeacoffee.com/viggoz)
