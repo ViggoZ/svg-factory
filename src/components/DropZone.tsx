@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo } from 'react'
+import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import ErrorAlert from './ErrorAlert'
 
@@ -19,7 +19,7 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: { 'image/svg+xml': ['.svg'] } });
 
-  const handlePaste = useCallback((event: React.ClipboardEvent<HTMLDivElement>) => {
+  const handlePaste = (event: React.ClipboardEvent<HTMLDivElement>) => {
     const clipboardData = event.clipboardData;
     if (clipboardData) {
       const text = clipboardData.getData('text');
@@ -29,15 +29,12 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
         onFileSelect([file]);
       }
     }
-  }, [onFileSelect]);
-
-  const memoizedRootProps = useMemo(() => getRootProps(), [getRootProps]);
-  const memoizedInputProps = useMemo(() => getInputProps(), [getInputProps]);
+  };
 
   return (
     <div onPaste={handlePaste} className='w-full'>
-      <div {...memoizedRootProps} className="w-full max-w-7xl border-2 border-dashed border-neutral-800 px-6 py-10 bg-[#F1F0E2] text-center cursor-pointer rounded-3xl">
-        <input {...memoizedInputProps} />
+      <div {...getRootProps()} className="w-full max-w-7xl border-2 border-dashed border-neutral-800 px-6 py-10 bg-[#F1F0E2] text-center cursor-pointer rounded-3xl">
+        <input {...getInputProps()} />
         <img src="/ic_upload.svg" alt="Upload Icon" className="w-24 h-24 mx-auto mb-4" />
         {
           isDragActive ?
