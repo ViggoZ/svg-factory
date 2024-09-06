@@ -14,20 +14,20 @@ export const metadata: Metadata = {
     description: 'Optimize your SVG files 100% automatically and for free with SVG Factory.',
     images: [
       {
-        url: '/og-image.png', // 确保这个路径指向你的 OG 图片
+        url: '/og-image.webp', 
         width: 1200,
         height: 630,
         alt: 'SVG Factory - Free Bulk SVG Optimizer',
       },
     ],
-    url: 'https://yourdomain.com', // 替换为你的实际域名
+    url: 'https://svg-factory.vercel.app/', 
     siteName: 'SVG Factory',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SVG Factory - Free Bulk SVG Optimizer',
     description: 'Optimize your SVG files 100% automatically and for free with SVG Factory.',
-    images: ['/og-image.png'], // 确保这个路径指向你的 OG 图片
+    images: ['/og-image.webp'],
   },
 }
 
