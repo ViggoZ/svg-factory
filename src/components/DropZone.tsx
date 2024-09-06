@@ -11,13 +11,13 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length === 0) {
-      setError('Please upload files in SVG format');
+      setError('Please upload files in SVG or image format');
     } else {
       onFileSelect(acceptedFiles);
     }
   }, [onFileSelect]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: { 'image/svg+xml': ['.svg'] } });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: { 'image/svg+xml': ['.svg'], 'image/*': [] } });
 
   const handlePaste = (event: React.ClipboardEvent<HTMLDivElement>) => {
     const clipboardData = event.clipboardData;
@@ -38,8 +38,8 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
         <img src="/ic_upload.svg" alt="Upload Icon" className="w-24 h-24 mx-auto mb-4" />
         {
           isDragActive ?
-            <p className='text-lg font-bold'>Drop the SVG files here ...</p> :
-            <p className='text-lg font-bold'>Drag & Drop SVG files or paste SVG Here</p>
+            <p className='text-lg font-bold'>Drop the files here ...</p> :
+            <p className='text-lg font-bold'>Drag & Drop SVG or image files or paste SVG Here</p>
         }
         <button className="flex mt-4 mx-auto px-12 py-4 bg-neutral-800 hover:bg-neutral-950 text-white text-base transition duration-300 rounded-2xl">
         <img src="/ic_add.svg" alt="Upload Icon" className="w-6 h-6 mx-auto pr-2" />
