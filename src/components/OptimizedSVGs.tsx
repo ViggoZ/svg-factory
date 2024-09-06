@@ -56,9 +56,15 @@ interface OptimizedSVGsProps {
         )}
         <div className='flex justify-between items-center pb-4 pr-2'>
         <h2 className="text-sm sm:text-xl font-bold">Optimized {svgs.length} SVGs: </h2>
-        <span className="text-xs sm:text-md font-bold">
-          -{totalSavedPercentage}% | saved {totalSavedSize >= 1024 * 1024 ? `${totalSavedSizeMB} MB` : `${totalSavedSizeKB} KB`}
+        <div>
+        <span className="text-sm sm:text-md font-bold pr-2">
+          saved {totalSavedSize >= 1024 * 1024 ? `${totalSavedSizeMB} MB` : `${totalSavedSizeKB} KB`}
         </span>
+        <span className="text-xs sm:text-md font-semibold bg-green-500 px-3 py-1 rounded-full">
+          -{totalSavedPercentage}%</span>
+          
+        </div>
+        
         </div>
         <ul className="max-h-80 overflow-y-auto custom-scrollbar pr-2">
           {svgs.map((svg, index) => (

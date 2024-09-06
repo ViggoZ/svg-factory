@@ -39,7 +39,7 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
         {
           isDragActive ?
             <p className='text-lg font-bold'>Drop the SVG files here ...</p> :
-            <p className='text-lg font-bold'>Drag & Drop SVG files or paste image Here</p>
+            <p className='text-lg font-bold'>Drag & Drop SVG files or paste SVG Here</p>
         }
         <button className="flex mt-4 mx-auto px-12 py-4 bg-neutral-800 hover:bg-neutral-950 text-white text-base transition duration-300 rounded-2xl">
         <img src="/ic_add.svg" alt="Upload Icon" className="w-6 h-6 mx-auto pr-2" />
