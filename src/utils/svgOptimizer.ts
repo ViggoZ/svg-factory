@@ -24,7 +24,7 @@ export async function optimizeSVG(file: File): Promise<{ data: string; size: num
         'removeUnknownsAndDefaults',
         'removeNonInheritableGroupAttrs',
         'removeUselessStrokeAndFill',
-        'removeViewBox',
+        // 'removeViewBox',
         'cleanupEnableBackground',
         'removeHiddenElems',
         'removeEmptyText',
